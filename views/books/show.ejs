@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= book.name %> | Bookshelf</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="page">
+    <nav class="topbar">
+      <a class="brand" href="/">Bookshelf</a>
+      <div class="topbar__links">
+        <a href="/books">All books</a>
+        <a class="btn primary" href="/books/new">Add book</a>
+      </div>
+    </nav>
+
+    <main class="container narrow">
+      <header class="page-head">
+        <div>
+          <p class="eyebrow">Book detail</p>
+          <h1><%= book.name %></h1>
+          <div class="badge <%= book.isReadyToRead ? 'ready' : 'pending' %>">
+            <%= book.isReadyToRead ? 'Ready to read' : 'Not ready yet' %>
+          </div>
+        </div>
+        <div class="page-head__actions">
+          <a class="btn ghost" href="/books">Back to list</a>
+          <a class="btn primary" href="/books/<%= book._id %>/edit">Edit</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <p class="muted">Status</p>
+        <p class="lead">
+          <%= book.isReadyToRead ? 'Queued up and ready to go.' : 'Mark it ready when you want to start reading.' %>
+        </p>
+      </section>
+
+      <form action="/books/<%= book._id %>?_method=DELETE" method="POST" class="inline-form">
+        <button class="btn danger" type="submit">Delete book</button>
+      </form>
+    </main>
+  </body>
+</html>

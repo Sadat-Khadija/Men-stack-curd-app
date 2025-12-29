@@ -1,14 +1,30 @@
-<!-- views/index.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Books App</title>
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
-    <h1>Welcome to the Books app!</h1>
-    <p>An app for collecting your favorite books.</p>
+  <body class="page">
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Bookshelf</p>
+        <h1>Track what you want to read next.</h1>
+        <p class="lede">
+          Save titles you care about, mark them as ready to read, and keep your list tidy.
+        </p>
+        <div class="hero__actions">
+          <a class="btn primary" href="/books">View all books</a>
+          <a class="btn ghost" href="/books/new">Add a book</a>
+        </div>
+      </div>
+      <div class="hero__card">
+        <p class="eyebrow">Quick glance</p>
+        <div class="badge ready">Ready to read</div>
+        <h2>"Your next favorite book"</h2>
+        <p class="muted">Organize your reading list in one spot.</p>
+      </div>
+    </header>
   </body>
 </html>

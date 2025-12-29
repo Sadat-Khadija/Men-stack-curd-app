@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Book | Bookshelf</title>
+    <title>Edit <%= book.name %> | Bookshelf</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="page">
@@ -17,27 +17,26 @@
     <main class="container narrow">
       <header class="page-head">
         <div>
-          <p class="eyebrow">Add book</p>
-          <h1>Create a new book</h1>
-          <p class="muted">Keep your list updated with what you want to read.</p>
+          <p class="eyebrow">Edit book</p>
+          <h1>Update "<%= book.name %>"</h1>
         </div>
-        <a class="btn ghost" href="/books">Back</a>
+        <a class="btn ghost" href="/books/<%= book._id %>">Back</a>
       </header>
 
-      <form class="form" action="/books" method="POST">
+      <form class="form" action="/books/<%= book._id %>?_method=PUT" method="POST">
         <label class="field">
           <span>Book name</span>
-          <input type="text" name="name" placeholder="The Great Gatsby" required />
+          <input type="text" name="name" value="<%= book.name %>" required />
         </label>
 
         <label class="toggle">
-          <input type="checkbox" name="isReadyToRead" />
+          <input type="checkbox" name="isReadyToRead" <%= book.isReadyToRead ? 'checked' : '' %> />
           <span>Ready to read</span>
         </label>
 
         <div class="form__actions">
-          <a class="btn ghost" href="/books">Cancel</a>
-          <button class="btn primary" type="submit">Create book</button>
+          <a class="btn ghost" href="/books/<%= book._id %>">Cancel</a>
+          <button class="btn primary" type="submit">Save changes</button>
         </div>
       </form>
     </main>
