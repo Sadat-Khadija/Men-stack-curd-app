@@ -20,6 +20,12 @@ app.get('/', async(req, res) => {
   res.render('index.ejs');
 });
 
+
+app.get("/books/new", (req, res) => {
+    res.render("books/new.ejs");
+});
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
+
