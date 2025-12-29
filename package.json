@@ -1,0 +1,31 @@
+{
+  "name": "men-stack-curd-app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Sadat-Khadija/Men-stack-curd-app#readme",
+  "bugs": {
+    "url": "https://github.com/Sadat-Khadija/Men-stack-curd-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sadat-Khadija/Men-stack-curd-app.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
